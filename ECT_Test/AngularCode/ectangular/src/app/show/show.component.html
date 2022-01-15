@@ -1,0 +1,59 @@
+<h1> Simple sort by name </h1>
+<div class="page-area">
+  <div class="row justify-content-center">
+
+    <div class="col-md-8">
+      <table class="table" style='font-family: Arial; font-size: 14px; width:50%;'>
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Product Name</th>
+            <th scope="col">Price</th>
+            <th scope="col">Avability</th>
+            <th scope="col">Date</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let product of productArr |customSort:'-name'">
+            <th scope="row">{{product.sno}}</th>
+            <td>{{product.name}}</td>
+            <td>{{product.price}}</td>
+            <td>{{product.availablity}}</td>
+            <td>{{product.date}}</td>
+          </tr>
+
+        </tbody>
+      </table>
+    </div>
+
+  </div>
+</div>
+
+<h1> Sort by name and then by price </h1>
+<div class="page-area">
+  <div class="row justify-content-center">
+
+    <div class="col-md-8">
+      <table class="table" style='font-family: Arial; font-size: 14px; width:50%;'>
+        <thead>
+          <tr>
+
+            <th scope="col">Product Name</th>
+            <th scope="col">Price</th>
+
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let product of productArr1 |customSort: ['name','-price']">
+
+            <td>{{product.name}}</td>
+            <td>{{product.price}}</td>
+
+          </tr>
+
+        </tbody>
+      </table>
+    </div>
+
+  </div>
+</div>
